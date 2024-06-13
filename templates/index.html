@@ -1,0 +1,204 @@
+{% block content %}
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #343a40;
+            padding: 20px 40px; /* Increased padding for a broader header */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar h1 {
+            margin: 0;
+            color: white;
+            font-size: 2rem; /* Increased font size for the header title */
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 1.2rem; /* Slightly increased font size for links */
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+        }
+        #recipeForm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #recipeInput {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+        }
+        .input-group {
+            display: flex;
+            width: 100%;
+            max-width: 400px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            overflow: hidden;
+            width: calc(33% - 20px);
+            min-width: 200px;
+            max-width: 300px;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .card-text {
+            font-size: 1rem;
+            color: #666;
+        }
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        footer a {
+            color: #28a745;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <nav class="navbar">
+        <h1>Recipe App</h1>
+        <div>
+            <a href="/">Home</a>
+            <a href="/favorites">Favorites</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <img src="{{ url_for('static', filename='images/food2.jpg') }}" alt="IMAGE NOT FOUND">
+
+        <h1>Recipes</h1>
+        <script>
+            function submitForm(event) {
+                event.preventDefault(); // Prevent the default form submission
+                const recipeInput = document.getElementById("recipeInput").value;
+                const url = "{{ url_for('recipe_detail', name='__RECIPE__') }}".replace('__RECIPE__', encodeURIComponent(recipeInput));
+                window.location.href = url;
+            }
+        </script>
+        <form id="recipeForm" onsubmit="submitForm(event)">
+            <div class="input-group">
+                <input list="recipes" id="recipeInput" name="name" placeholder="Enter a recipe name">
+                <button type="submit">Go</button>
+            </div>
+            <datalist id="recipes">
+                {% if recipes %}
+                    {% for recipe in recipes %}
+                        <option value="{{ recipe }}"></option>
+                    {% endfor %}
+                {% else %}
+                    <option disabled>No recipes found.</option>
+                {% endif %}
+            </datalist>
+        </form>
+    </div>
+
+    <div class="cards-container">
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/food1.jpg') }}" alt="Food Image 1">
+            <div class="card-content">
+                <h2 class="card-title">Delicious Paneer</h2>
+                <p class="card-text">Savor the rich and creamy delight of our Paneer gravy, where tender cubes of paneer are immersed in a spiced sauce that promises to elevate every meal into a gourmet experience!
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/food5 (1).jpg') }}" alt="Food Image 2">
+            <div class="card-content">
+                <h2 class="card-title">Tasty Donuts</h2>
+                <p class="card-text">Indulge in the irresistible delight of our freshly baked donuts that will make every bite a moment of pure bliss!</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/food4 (1).jpg') }}" alt="Food Image 3">
+            <div class="card-content">
+                <h2 class="card-title"> Savory Noodles</h2>
+                <p class="card-text">Savor the exquisite taste of our perfectly cooked noodles that will leave you craving more!</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Recipe Website</p>
+        <p>Follow me on
+            <a href="https://twitter.com" target="_blank">Twitter</a>,
+            <a href="https://facebook.com" target="_blank">Facebook</a>, and
+            <a href="https://instagram.com" target="_blank">Instagram</a>.
+        </p>
+    </footer>
+{% endblock %}
