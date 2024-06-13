@@ -4,23 +4,19 @@
 </div>
 <h1>Recipe App </h1>
 
- DermAware is a Flask application that utilizes AI algorithms to detect skin diseases and provide treatment susceptibility for patients. It offers an intelligent system that analyzes patient data and provides valuable insights for effective disease diagnosis and treatment planning.
+ A full-stack application to interact with the Aiurveda app's toy API. The API is designed to fetch recipe details and offers a single endpoint for retrieving recipes. The 
+ Recipe App provides users with access to a list of recipes, allows them to view individual recipes with images, descriptions, and ingredients and includes the ability to 
+ mark recipes as favorites for future reference.
 
 ## Preview
 
-![Preview Image](https://github.com/Suhanibhat2003/Skin-Disease-Detection-System/blob/main/Screenshot%20(21).png)
-![Preview Image](https://github.com/Suhanibhat2003/Skin-Disease-Detection-System/blob/main/Screenshot%20(22).png)
-![Preview Image](https://github.com/Suhanibhat2003/Skin-Disease-Detection-System/blob/main/Screenshot%20(24).png)
+![Preview Image](https://github.com/Suhanibhat2003/Recipe-App-API/blob/main/Screenshot%20(83).png)
+![Preview Image](https://github.com/Suhanibhat2003/Recipe-App-API/blob/main/Screenshot%20(84).png)
+![Preview Image](https://github.com/Suhanibhat2003/Recipe-App-API/blob/main/Screenshot%20(85).png)
 
 
 
 
-## Features
-
-- Skin Disease Detection: DermAware leverages advanced AI algorithms to analyze patient symptoms and data to accurately detect various diseases.
-- Treatment Susceptibility: Based on the detected disease, it provides valuable information on treatment susceptibility, assisting healthcare professionals in making informed decisions.
-- User-Friendly Interface: It offers an intuitive and easy-to-use interface, making it accessible for both medical professionals and patients.
-- Data Privacy and Security: It prioritizes data privacy and security, ensuring that patient information is handled with the utmost confidentiality and adheres to industry standards.
 
 
 <!--h1 without bottom border-->
@@ -28,7 +24,7 @@
 <!--tech stack icons-->
 <p>
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=css,github,html,js,py,tensorflow,vscode&perline=14" />
+    <img src="https://skillicons.dev/icons?i=css,github,html,js,py,vscode&perline=14" />
     <img/>
     <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" width="47" height="47" 
       style="height:47px;width:auto;border-radius:8rem;overflow: hidden"/>
@@ -37,35 +33,7 @@
   </a>
 </p>
 
-### Prerequisites
-Make sure you have the following dependencies installed before running the project:
 
-- Python 3.7 or above
-- Flask
-- Pillow==5.4.1
-- gevent==1.4.0
-- gunicorn==19.9.0
-- keras==2.10.0
-- tensorflow==2.10.0
-- numpy
-
-### Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/your-username/Skin-Disease-Detection-System.git
-
-2. Navigate to the project directory:
-
-   ```bash
-   cd Skin Disease Detection System
-
-3. Install the required dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   
 ### Run
 - Start the Flask development server:
    
@@ -74,5 +42,5 @@ Make sure you have the following dependencies installed before running the proje
   
 ### Open your web browser and visit the following URL:
 
-- http://localhost:3000
-w
+- http://127.0.0.1:5000
+
