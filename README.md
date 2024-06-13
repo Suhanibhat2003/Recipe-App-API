@@ -13,6 +13,9 @@
 ![Preview Image](https://github.com/Suhanibhat2003/Recipe-App-API/blob/main/Screenshot%20(83).png)
 ![Preview Image](https://github.com/Suhanibhat2003/Recipe-App-API/blob/main/Screenshot%20(84).png)
 ![Preview Image](https://github.com/Suhanibhat2003/Recipe-App-API/blob/main/Screenshot%20(85).png)
+![Preview Image](https://github.com/Suhanibhat2003/Recipe-App-API/blob/main/Screenshot%20(86).png)
+![Preview Image](https://github.com/Suhanibhat2003/Recipe-App-API/blob/main/Screenshot%20(87).png)
+![Preview Image](https://github.com/Suhanibhat2003/Recipe-App-API/blob/main/Screenshot%20(88).png)
 
 
 
